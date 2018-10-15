@@ -1,12 +1,12 @@
 module.exports = {
   transform: {
-    '^.+\\.tsx?$': '<rootDir>/node_modules/ts-jest/preprocessor.js'
+    '^.+\\.tsx?$': 'ts-jest',
   },
   setupFiles: ['<rootDir>/src/utils/testUtils.ts'],
   globals: {
     'ts-jest': {
-      skipBabel: true
-    }
+      tsConfig: 'tsconfig.json',
+    },
   },
   testRegex: '(/test/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
@@ -21,12 +21,12 @@ module.exports = {
     '!src/**/*/__mock__.ts',
     '!src/**/*/__mocks__.ts',
     '!src/**/*/mock.ts',
-    '!src/**/*/mocks.ts'
+    '!src/**/*/mocks.ts',
   ],
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/src/utils/fileMock.ts',
     '\\.(css|scss)$': 'identity-obj-proxy',
-    '^src/(.*)': '<rootDir>/src/'
-  }
+    '^src/(.*)': '<rootDir>/src/',
+  },
 };

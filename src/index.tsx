@@ -5,7 +5,6 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import App from './app/containers/App';
 import { configureStore } from './core/configureStore';
 import saga from './core/sagas';
-import './commonStyles/styles.scss';
 
 const store = configureStore();
 store.runSaga(saga);

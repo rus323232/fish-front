@@ -1,0 +1,39 @@
+@import 'src/globalStyles/variables';
+
+.addFormBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 836px;
+  height: 70px;
+  margin: 0 auto 40px;
+  line-height: 1.64;
+  border: none;
+  background-color: $whiteBG;
+  box-shadow: 5px 5px 15px 5px transparentize($color: $black, $amount: 0.93);
+
+  font-family: $fontFamilySecond;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.67;
+  letter-spacing: normal;
+  color: $fontGray;
+  outline: none;
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  &:hover,
+  &:focus {
+    background-color: transparentize($color: $whiteBG, $amount: 0.4);
+    box-shadow: 4px 4px 20px 10px transparentize($color: $black, $amount: 0.93);
+  }
+}
+
+.icon {
+  width: 12px;
+  height: 12px;
+  background-image: url('./plus.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 9px;
+}

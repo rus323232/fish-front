@@ -1,0 +1,84 @@
+$fontFamilyMain: 'SFUI', 'Arial', sans-serif;
+$fontFamilySecond: 'Rubik', 'SFUI', Arial, sans-serif;
+$fontFamilySecondBold: 'Rubik', 'SFUI', Arial, sans-serif;
+
+$fontColorMain: #333;
+
+// border
+$bdrsSmall: 5px;
+$bdrsBig: 10px;
+$bdDefaultColor: #ccc;
+$popupBtnBorderColor: #fcb500;
+$bdDefault: 1px solid $bdDefaultColor;
+$brdHoverItemColor: #fdbc15;
+$brdStatItem: #dcdcdc;
+
+// background color
+$white: #fff;
+$black: #000;
+$landingOrange: #fbb500;
+$whiteBG: #f2f2f2;
+$sideBarMain: #3a3e50;
+$photoBG: #efefef;
+
+// btn colors
+$btnOrangeBorder: #ffcb4e;
+$btnLandingBG: #23b394;
+$btnLandingBGHover: rgba(45, 192, 160, 0.87);
+$btnOrangeColor: #ff4800;
+$btnOrangeColorHover: rgba(255, 72, 0, 0.87);
+
+// status
+$statusConfirm: #23b394;
+$statusUnConfirm: #fcb500;
+$statusRejected: #ff4800;
+
+$statusProcessed: #73c700;
+$statusPaid: #886eee;
+$statusPending: #fcb500;
+$statusReady: #23b394;
+$statusClosed: #3e4856;
+$statusCancelled: #ff4800;
+$statusDrafting: #ff4800;
+$statusWaitinForPayment: #ff8454;
+$statusPrepayment: #2095ff;
+
+// font color
+$fontMainWhite: #fff;
+$fontMainBlack: #0b0b0b;
+$fontRequiredColor: #d82f2a;
+$fontGray: #3e4856;
+$fontOrderInfo: #272727;
+$fontLinkColor: #0f92ff;
+$fontLinkUnderline: #2e99fe;
+$fontOrangeColor: #ff4800;
+$fontContactPopup: #242121;
+$fontActiveNavColor: #fcb500;
+$fontPhotoSize: #434d5b;
+$fontOrdersHeader: #b5b8c3;
+
+// arrow pagination
+$arrowActiveColor: #fcb500;
+$arrowDisabledColor: #434e5d;
+$borderDisabledArrow: #dcdcdc;
+
+// const for preloader
+$preloaderFillColor: #ffc539;
+$boxesInRow: 3;
+$boxSize: 20px;
+$boxMrg: 6px;
+$stepSize: $boxSize + $boxMrg;
+$contSize: $boxSize * $boxesInRow + $boxMrg * ($boxesInRow - 1);
+
+$animTime: 4s;
+$movement: (
+  1: ('-x', '+x', '=0', '+x', '+y', '=0', '=0', '-y', '-x', '-x', '+x'),
+  2: ('=0', '+x', '-x', '+x', '+y', '=0', '=0', '=0', '-x', '=0', '-y'),
+  3: ('-x', '=0', '+x', '-x', '=0', '=0', '=0', '=0', '-y', '+x', '+y'),
+  4: ('-x', '=0', '-y', '+x', '+y', '-y', '=0', '=0', '-x', '+y', '+x'),
+  5: ('=0', '=0', '=0', '+x', '=0', '=0', '=0', '=0', '-y', '-x', '+y'),
+  6: ('=0', '-x', '=0', '+x', '=0', '=0', '=0', '+y', '-x', '-y', '+x'),
+  7: ('+x', '=0', '=0', '-x', '-y', '+x', '-x', '=0', '+y', '+x', '-x'),
+  8: ('=0', '-x', '-y', '+x', '=0', '=0', '=0', '=0', '+x', '+y', '-x'),
+  9: ('-x', '=0', '+x', '-x', '+x', '=0', '-x', '=0', '-x', '+x', '+x')
+);

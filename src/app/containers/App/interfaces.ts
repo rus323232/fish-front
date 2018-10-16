@@ -11,5 +11,4 @@ export interface IAppMapState {
 export interface IAppMapDispatch {
   hideError: () => void;
   hideSuccess: () => void;
-  showError: (data: string) => void;
 }

@@ -5,7 +5,7 @@ import { hot } from 'react-hot-loader';
 import { Switch, Route } from 'react-router';
 import * as NotificationSystem from 'react-notification-system';
 import LandingPage from '../../components/LandingPage';
-import { hideError, hideSuccess, showError } from './duck';
+import { hideError, hideSuccess } from './duck';
 import * as S from './selectors';
 import { IStore } from 'src/core/reducers/interfaces';
 import { IAppMapState, IAppMapDispatch } from './interfaces';
@@ -20,19 +20,14 @@ const mapDispatchToProps = (dispatch): IAppMapDispatch =>
     {
       hideError,
       hideSuccess,
-      showError,
     },
     dispatch
   );
 
 type IAppProps = IAppMapState & IAppMapDispatch;
 
-class App extends React.Component<IAppProps, any> {
+export class App extends React.Component<IAppProps, any> {
   noty;
-
-  testError = () => {
-    this.props.showError('тестовая проерка логгирования');
-  };
 
   noteRef = ref => {
     this.noty = ref;
@@ -60,7 +55,6 @@ class App extends React.Component<IAppProps, any> {
   public render() {
     return (
       <React.Fragment>
-        <button onClick={this.testError}>Проверка ошибки</button>
         <Switch>
           <Route exact path="/" component={LandingPage} />
         </Switch>

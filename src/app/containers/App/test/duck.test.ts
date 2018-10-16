@@ -1,4 +1,4 @@
-import reducer, * as duck from '../../../src/app/containers/App/duck';
+import reducer, * as duck from '../duck';
 
 describe('Test action creators App', () => {
   it('noty actions', () => {

@@ -2,9 +2,14 @@ import * as React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { hot } from 'react-hot-loader';
-import { Switch, Route } from 'react-router';
+import { Switch, Route, Redirect } from 'react-router';
 import * as NotificationSystem from 'react-notification-system';
-import LandingPage from '../../components/LandingPage';
+import Landing from 'src/modules/landing';
+import Maps from 'src/modules/maps';
+import Lk from 'src/modules/Lk';
+import SignIn from 'src/modules/Signin';
+import SignUp from 'src/modules/Signup';
+import PrivateRoute from 'src/sharedComponents/PrivateRoute';
 import { hideError, hideSuccess } from './duck';
 import * as S from './selectors';
 import { IStore } from 'src/core/reducers/interfaces';
@@ -13,6 +18,7 @@ import { IAppMapState, IAppMapDispatch } from './interfaces';
 const mapStateToProps = (store: IStore): IAppMapState => ({
   errorLog: S.getError(store),
   successLog: S.getSuccess(store),
+  isAuth: S.getIsAuth(store),
 });
 
 const mapDispatchToProps = (dispatch): IAppMapDispatch =>
@@ -53,10 +59,15 @@ export class App extends React.Component<IAppProps, any> {
   }
 
   public render() {
+    const { isAuth } = this.props;
     return (
       <React.Fragment>
         <Switch>
-          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/" component={isAuth ? Maps : Landing} />
+          <PrivateRoute path="/signin" isAuth={!isAuth} component={SignIn} />
+          <PrivateRoute path="/signup" isAuth={!isAuth} component={SignUp} />
+          <PrivateRoute path="/lk" isAuth={isAuth} component={Lk} />
+          <Redirect to="/" />
         </Switch>
         <NotificationSystem ref={this.noteRef} />
       </React.Fragment>

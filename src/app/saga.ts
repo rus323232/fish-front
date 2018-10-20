@@ -35,4 +35,6 @@ export function* callAPI(url, params?) {
   }
 }
 
-export default function* rootSaga() {}
+export default function* rootSaga() {
+  
+}

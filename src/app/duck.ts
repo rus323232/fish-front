@@ -8,6 +8,9 @@ export const SHOW_SUCCESS = 'SHOW_SUCCESS';
 export const HIDE_ERROR = 'HIDE_ERROR';
 export const HIDE_SUCCESS = 'HIDE_SUCCESS';
 
+export const LOGIN = 'app/LOGIN';
+export const LOGOUT = 'app/LOGOUT';
+
 const errors = (state = '', action): string => {
   switch (action.type) {
     case SHOW_ERROR:
@@ -30,9 +33,21 @@ const success = (state = '', action): string => {
   }
 };
 
+const isAuthed = (state = true, action): boolean => {
+  switch (action.type) {
+    case LOGIN:
+      return true;
+    case LOGOUT:
+      return false;
+    default:
+      return state;
+  }
+};
+
 const reducer = combineReducers<IAppReducer>({
   errors,
   success,
+  isAuthed,
 });
 
 export default reducer;

@@ -18,7 +18,7 @@ module.exports = Merge(commonConfig, {
           {
             loader: 'css-loader',
             query: {
-              localIdentName: '[hash:base64:4]',
+              localIdentName: '[local]_[hash:base64:3]',
               modules: true,
               sourceMap: true
             }

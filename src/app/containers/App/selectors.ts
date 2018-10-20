@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { IAppReducer } from 'src/app/interfaces';
+import { IAppReducer } from 'src/app/containers/App/interfaces';
 import { IStore } from 'src/core/reducers/interfaces';
 
 const appReducer = (store: IStore): IAppReducer => store.app;

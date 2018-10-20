@@ -33,7 +33,7 @@ const success = (state = '', action): string => {
   }
 };
 
-const isAuthed = (state = true, action): boolean => {
+const isAuthed = (state = false, action): boolean => {
   switch (action.type) {
     case LOGIN:
       return true;

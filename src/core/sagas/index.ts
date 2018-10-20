@@ -1,5 +1,5 @@
 import { all, fork } from 'redux-saga/effects';
-import appSaga from 'src/app/saga';
+import appSaga from 'src/app/containers/App/saga';
 
 export default function*() {
   yield all([

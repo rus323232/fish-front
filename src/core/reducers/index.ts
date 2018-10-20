@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import app from 'src/app/duck';
+import app from 'src/app/containers/App/duck';
 import { IStore } from './interfaces';
 
 const reducer = combineReducers<IStore>({

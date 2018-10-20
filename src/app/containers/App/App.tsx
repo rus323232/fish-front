@@ -15,6 +15,8 @@ import * as S from './selectors';
 import { IStore } from 'src/core/reducers/interfaces';
 import { IAppMapState, IAppMapDispatch } from './interfaces';
 
+import 'src/globalStyles/styles.scss';
+
 const mapStateToProps = (store: IStore): IAppMapState => ({
   errorLog: S.getError(store),
   successLog: S.getSuccess(store),

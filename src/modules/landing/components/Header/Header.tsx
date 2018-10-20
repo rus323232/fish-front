@@ -12,7 +12,6 @@ export default class Header extends React.Component<IHeaderProps, any> {
         <Link to="/">Там, где водится рыба</Link>
         <div>
           <Link to="/signin">Войти</Link>
-          <Link to="/signup">Регистрация</Link>
         </div>
       </header>
     );

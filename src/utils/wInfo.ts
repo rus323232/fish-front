@@ -4,23 +4,22 @@ const wInfoStyle = {
   header: {
     h1: {
       marginRight: '20px',
-      fontSize: '25px',
-      display: 'inline'
+      fontSize: '20px',
+      display: 'inline',
     },
     body: {
-      paddingTop: 0,
-      paddingBottom: 0
+      padding: 0,
     },
     h2: {
       display: 'inline',
-      color: '#999'
-    }
+      color: '#999',
+    },
   },
   infoBody: {
     backgroundColor: '#eee',
     padding: '0 5px',
-    lineHeight: '2'
-  }
+    lineHeight: '2',
+  },
 };
 
 export const wInfo = text =>

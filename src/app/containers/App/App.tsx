@@ -60,12 +60,17 @@ export class App extends React.Component<IAppProps, any> {
     }
   }
 
+  renderIsAuthed = () => {
+    const { isAuth } = this.props;
+    return isAuth ? Maps : Landing;
+  };
+
   public render() {
     const { isAuth } = this.props;
     return (
       <React.Fragment>
         <Switch>
-          <Route exact path="/" component={isAuth ? Maps : Landing} />
+          <Route exact path="/" component={this.renderIsAuthed()} />
           <PrivateRoute path="/signin" isAuth={!isAuth} component={SignIn} />
           <PrivateRoute path="/signup" isAuth={!isAuth} component={SignUp} />
           <PrivateRoute path="/lk" isAuth={isAuth} component={Lk} />

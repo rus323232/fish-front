@@ -1,5 +1,7 @@
 # Рыбная карта
 
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
 ### Установка стандартная
 
     npm i
@@ -28,7 +30,7 @@
 
 Разработка ведётся на [TypeScript](https://www.typescriptlang.org)
 
-WEB framework React 16.4
+WEB framework React 16.5
 
 state managment Redux, middleware - [Redux-Saga](https://github.com/redux-saga/redux-saga)
 

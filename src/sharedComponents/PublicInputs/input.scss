@@ -1,0 +1,42 @@
+@import 'src/commonStyles/variables';
+
+.label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  position: relative;
+  color: $fontGray;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.input {
+  border-radius: 5px;
+  border: 1px solid $whiteBG;
+  padding: 9px 10px;
+  background-color: $whiteBG;
+  width: 210px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  outline: none;
+  box-sizing: border-box;
+  transition: background-color 0.3s, border 0.3s;
+  &:focus {
+    background-color: $white;
+    border: 1px solid $landingOrange;
+  }
+}
+
+.password {
+  letter-spacing: 5px;
+  &:focus {
+    color: $fontOrangeColor;
+  }
+}
+
+.errorClass {
+  color: $fontOrangeColor;
+  position: absolute;
+  right: 0;
+  top: 0;
+}

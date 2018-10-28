@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export interface InjectedProps extends InnerState {
-  handleChange: () => void;
+  handleChange: (e: React.FormEvent<HTMLInputElement>) => void;
 }
 
 interface InnerState {
@@ -17,8 +17,8 @@ interface InnerState {
 
 export default function AuthWrapper<T extends InjectedProps>(
   WrappedComponent: React.ComponentType<T>
-): React.ComponentClass<T> {
-  return class IApp extends React.Component<T, InnerState> {
+) {
+  return class IApp extends React.Component<{}, InnerState> {
     state = {
       data: {
         email: '',
@@ -30,7 +30,15 @@ export default function AuthWrapper<T extends InjectedProps>(
       },
     };
 
-    handleChange = () => {};
+    handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+      const { value, name } = e.currentTarget;
+      this.setState(({ data }) => ({
+        data: {
+          ...data,
+          [name]: value,
+        },
+      }));
+    };
 
     public render() {
       return (

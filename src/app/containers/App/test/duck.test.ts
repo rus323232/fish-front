@@ -7,6 +7,8 @@ describe('Test action creators App', () => {
     expect(duck.hideError()).toEqual({ type: duck.HIDE_ERROR });
     expect(duck.showSuccess(testMsg)).toEqual({ type: duck.SHOW_SUCCESS, payload: testMsg });
     expect(duck.hideSuccess()).toEqual({ type: duck.HIDE_SUCCESS });
+    expect(duck.login()).toEqual({ type: duck.LOGIN });
+    expect(duck.logout()).toEqual({ type: duck.LOGOUT });
   });
 });
 
@@ -17,6 +19,7 @@ describe('Test app reducer', () => {
     expect(reducer(undefined, { type: 'Unused_Action' })).toEqual({
       errors: '',
       success: '',
+      isAuthed: false,
     });
   });
 
@@ -24,6 +27,7 @@ describe('Test app reducer', () => {
     expect(reducer(undefined, duck.showError(errMsg))).toEqual({
       errors: errMsg,
       success: '',
+      isAuthed: false,
     });
   });
 
@@ -31,6 +35,7 @@ describe('Test app reducer', () => {
     expect(reducer(undefined, duck.showSuccess(errMsg))).toEqual({
       errors: '',
       success: errMsg,
+      isAuthed: false,
     });
   });
 
@@ -38,12 +43,14 @@ describe('Test app reducer', () => {
     expect(
       reducer(
         {
+          isAuthed: false,
           errors: errMsg,
           success: errMsg,
         },
         duck.hideError()
       )
     ).toEqual({
+      isAuthed: false,
       errors: '',
       success: errMsg,
     });
@@ -53,12 +60,14 @@ describe('Test app reducer', () => {
     expect(
       reducer(
         {
+          isAuthed: false,
           errors: errMsg,
           success: errMsg,
         },
         duck.hideSuccess()
       )
     ).toEqual({
+      isAuthed: false,
       errors: errMsg,
       success: '',
     });

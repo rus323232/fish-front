@@ -1,6 +1,6 @@
 import Input from './Input';
-import PhoneInput from './Input';
+import PhoneInput from './PhoneInput';
 import SharedSelect from './SharedSelect';
 
-export default Input;
 export { PhoneInput, SharedSelect };
+export default Input;

@@ -2,6 +2,7 @@ import * as React from 'react';
 
 export interface InjectedProps extends InnerState {
   handleChange: (e: React.FormEvent<HTMLInputElement>) => void;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
 interface InnerState {
@@ -40,9 +41,18 @@ export default function AuthWrapper<T extends InjectedProps>(
       }));
     };
 
+    handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+    };
+
     public render() {
       return (
-        <WrappedComponent {...this.props} {...this.state} handleChange={this.handleChange} />
+        <WrappedComponent
+          {...this.props}
+          {...this.state}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
       );
     }
   };

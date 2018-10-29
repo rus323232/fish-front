@@ -1,8 +1,7 @@
 import * as React from 'react';
-import * as cx from 'classnames';
-import InputMask from 'react-input-mask';
+import cx from 'classnames';
 
-const s = require('./input');
+const s = require('./inputStyle');
 
 export interface InputProps extends React.InputHTMLAttributes<any> {
   label: string;

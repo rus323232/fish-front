@@ -3,7 +3,7 @@ import * as cx from 'classnames';
 import Select from 'react-select';
 import { Props } from 'react-select/lib/Select';
 
-const s = require('./input');
+const s = require('./inputStyle');
 
 export interface ISharedSelect extends Props {
   label: string;
